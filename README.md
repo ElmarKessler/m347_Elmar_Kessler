@@ -48,7 +48,23 @@ docker/getting-started: Das Docker-Image, aus dem der Container erstellt wird.
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B8.PNG "")
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B9.PNG "")
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B10.PNG "")
-
+#### Commands siehe KN01B-Commands.txt file
+## C
+![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01C1.PNG "")
+![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01C2.PNG "")
+## D
+![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01D1.PNG "")
+1. Nginx Herunterladen
+	- docker pull nginx:latest
+2. Nginx in das eigene repo kopieren
+	- docker tag nginx:latest rubenkpt/m347:nginx
+3. MariaDb herunterladen
+	- docker pull mariadb:latest
+4. MariaDb in das eigene repo kopieren
+	- docker tag mariadb:latest rubenkpt/m347:mariadb
+5. Alles auf repo pushen
+	- docker push rubenkpt/m347:nginx
+	- docker push rubenkpt/m347:mariadb
 ## KN2
 ## A Lab 4.1 - EC2
 ### HTML-Seite, inkl. URL
