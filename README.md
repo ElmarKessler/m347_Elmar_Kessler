@@ -39,7 +39,7 @@ docker/getting-started: Das Docker-Image, aus dem der Container erstellt wird.
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B4.1.PNG "")
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B4.4.PNG "")
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B5.1.PNG "")
-
+### Das Image Ubuntu wurde automatisch heruntergeladen aber es wurde nicht automatisch gestartet.
 
 ## KN2
 ## A Lab 4.1 - EC2
