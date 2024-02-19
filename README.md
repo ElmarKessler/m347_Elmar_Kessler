@@ -25,14 +25,11 @@
     - [D](#d)
 - [KN05](#kn05)
   
-
-# Elmar_Kessler_M346
 ## KN1
-### Der VM wird weniger CPUS zugeteilt als der PC zu Verfügung hat.
-![Der VM wird weniger CPUS zugeteilt als der PC zu Verfügung hat.](/wenigerCPU.png "")
-### Der VM wird weniger RAM zugeteilt als der PC zu Verfügung hat.
-![Der VM wird weniger RAM zugeteilt als der PC zu Verfügung hat.](/wenigerRAM.png "")
-### Der VM wird mehr CPUS zugeteilt als der PC zu Verfügung hat.
+## A
+![Der VM wird weniger CPUS zugeteilt als der PC zu Verfügung hat.](/KN01A1.png "")
+![Der VM wird weniger RAM zugeteilt als der PC zu Verfügung hat.](/KN01A2.png "")
+## B
 ![Der VM wird mehr CPUS zugeteilt als der PC zu Verfügung hat.](/zuvielCPU.png "")
 ### Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/zuvielRAM.png "")
