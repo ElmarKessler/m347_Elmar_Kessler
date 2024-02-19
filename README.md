@@ -42,6 +42,13 @@ docker/getting-started: Das Docker-Image, aus dem der Container erstellt wird.
 #### Der Befehl "docker run -d ubuntu" wurde erfolgreich ausgeführt. Zuerst wurde das Ubuntu-Image lokal nicht gefunden, daher hat Docker es automatisch von Docker Hub heruntergeladen. Der Container wurde dann erstellt. Der Container wurde nicht gestartet (siehe nächstes Bild) Die Ausgabe enthält die ID des erstellten Containers (hier: 79290ea45770b84009254ccfa7e1751c351d962eb6232aabe4a8dc96c0e31f40).
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B5.2.PNG "")
 
+![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B6.1.PNG "")
+![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B6.2.PNG "")
+![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B7.1.PNG "")
+![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B8.PNG "")
+![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B9.PNG "")
+![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01B10.PNG "")
+
 ## KN2
 ## A Lab 4.1 - EC2
 ### HTML-Seite, inkl. URL
