@@ -30,6 +30,11 @@
 ![Der VM wird weniger CPUS zugeteilt als der PC zu Verfügung hat.](/KN01A1.PNG "")
 ![Der VM wird weniger RAM zugeteilt als der PC zu Verfügung hat.](/KN01A2.PNG "")
 ## B
+# 3. docker run -d -p 80:80 docker/getting-started
+-d: Führt den Docker-Container im Hintergrund aus.
+-p 80:80: Mappt den Port 80 des Hosts auf den Port 80 des Containers.
+docker/getting-started: Das Docker-Image, aus dem der Container erstellt wird.
+
 ![Der VM wird mehr CPUS zugeteilt als der PC zu Verfügung hat.](/zuvielCPU.png "")
 ### Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/zuvielRAM.png "")
