@@ -54,17 +54,18 @@ docker/getting-started: Das Docker-Image, aus dem der Container erstellt wird.
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01C2.PNG "")
 ## D
 ![Der VM wird mehr RAM zugeteilt als der PC zu Verfügung hat.](/KN01D1.PNG "")
+#### Commands
 1. Nginx Herunterladen
 	- docker pull nginx:latest
 2. Nginx in das eigene repo kopieren
-	- docker tag nginx:latest rubenkpt/m347:nginx
+	- docker tag nginx:latest elmarkessler031/m347:nginx
 3. MariaDb herunterladen
 	- docker pull mariadb:latest
 4. MariaDb in das eigene repo kopieren
-	- docker tag mariadb:latest rubenkpt/m347:mariadb
+	- docker tag mariadb:latest elmarkessler031/m347:mariadb
 5. Alles auf repo pushen
-	- docker push rubenkpt/m347:nginx
-	- docker push rubenkpt/m347:mariadb
+	- docker push elmarkessler031/m347:nginx
+	- docker push elmarkessler031/m347:mariadb
 ## KN2
 ## A Lab 4.1 - EC2
 ### HTML-Seite, inkl. URL
