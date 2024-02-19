@@ -1,0 +1,13 @@
+docker exec -it eager_liskov /bin/bash
+
+Im image: service nginx status
+	exit
+
+docker ps
+docker stop eager_liskov
+docker rm brave_franklin
+docker rm eager_liskov
+docker rm sharp_hellman
+
+docker rmi ubuntu
+docker rmi nginx
