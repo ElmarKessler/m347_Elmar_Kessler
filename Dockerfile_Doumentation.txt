@@ -1,0 +1,3 @@
+FROM nginx # Legt das Basisimage für den Container fest (Nginx-Image).
+COPY static-html-directory /var/www/html # Kopiert den Inhalt des Verzeichnisses "static-html-directory" vom Host in das Verzeichnis "/var/www/html" im Container.
+EXPOSE 80 # Teilt Docker mit, dass der Container auf Port 80 hört, was jedoch nicht automatisch dazu führt, dass der Port von außen erreichbar ist es dient eher als Dokumentation für den beabsichtigten Netzwerkzugriff.
