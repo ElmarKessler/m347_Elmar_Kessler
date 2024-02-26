@@ -57,6 +57,10 @@ docker/getting-started: Das Docker-Image, aus dem der Container erstellt wird.
 #### Commands
 1. Nginx Herunterladen
 	- docker pull nginx:latest
+Was ist ein Tag?
+Ein Tag ist eine Kennzeichnung von einem Docker. Ein Tag wird verwendet um eine Version oder Konfiguration eines Images eindeutig zu identifizieren.
+Der Tag "latest" zeigt, dass die neuste Version verwendet wird.
+
 2. Nginx in das eigene repo kopieren
 	- docker tag nginx:latest elmarkessler031/m347:nginx
 3. MariaDb herunterladen
