@@ -1,0 +1,9 @@
+Befehle für das Build
+C:\GitHub\GitHub\m347_Elmar_Kessler\Dev>docker build -t imagekn02 .
+docker tag imagekn02:latest elmarkessler031/m347:kn02a
+
+Push in das private repository
+docker push elmarkessler031/m347:kn02a
+
+Start des containers
+docker run -p 8080:80 imagekn02

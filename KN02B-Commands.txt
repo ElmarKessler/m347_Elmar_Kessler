@@ -1,0 +1,19 @@
+Befehle
+DB:
+C:\GitHub\GitHub\m347_Elmar_Kessler\Dev2>docker build -t kn02b-db .
+
+docker run -d -p 3306:3306 --name kn02b-db kn02b-db
+
+WEB:
+C:\GitHub\GitHub\m347_Elmar_Kessler\Dev>docker build -t kn02b-web .
+
+docker run -d -p 8081:80 --link kn02b-db:mysql --name kn02b-web kn02b-web
+
+PUSH:
+docker tag kn02b-db elmarkessler031/m347:kn02b-db
+
+docker push elmarkessler031/m347:kn02b-db
+
+docker tag kn02b-web elmarkessler031/m347:kn02b-web
+
+docker push elmarkessler031/m347:kn02b-web
