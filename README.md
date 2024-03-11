@@ -71,11 +71,12 @@ Der Tag "latest" zeigt, dass die neuste Version verwendet wird.
 	- docker push elmarkessler031/m347:nginx
 	- docker push elmarkessler031/m347:mariadb
 ## KN2
-## A Lab 4.1 - EC2
-### HTML-Seite, inkl. URL
-![](/WebseiteMitUrlEC2.PNG "")
-### Liste der EC2-Instanzen
-![](/ListeInstanzenEC2.PNG "")
+### Dockerbefehle stehen im KN02A.txt
+
+### Screenshot aus Docker Desktop, welcher das Image kn02a zeigt
+![](/KN02ADocker.PNG "")
+### Screenshot der HTML-Seite, der die Seite helloworld.html zeigt, nachdem der Container gestartet wurde
+![](/KN02AHelloWorld.PNG "")
 ### Details der Web Server-Instanz (öffentliche IP sichtbar)
 ![](/DetailsEC2.PNG "")
 ### Security-Group: Liste der Inbound-Regeln
