@@ -71,16 +71,25 @@ Der Tag "latest" zeigt, dass die neuste Version verwendet wird.
 	- docker push elmarkessler031/m347:nginx
 	- docker push elmarkessler031/m347:mariadb
 ## KN2
+### A
 ### Dockerbefehle stehen im KN02A.txt
 
 ### Screenshot aus Docker Desktop, welcher das Image kn02a zeigt
 ![](/KN02ADocker.PNG "")
 ### Screenshot der HTML-Seite, der die Seite helloworld.html zeigt, nachdem der Container gestartet wurde
 ![](/KN02AHelloWorld.PNG "")
-### Details der Web Server-Instanz (öffentliche IP sichtbar)
-![](/DetailsEC2.PNG "")
-### Security-Group: Liste der Inbound-Regeln
-![](/ListeInboundRegelnEC2.PNG "")
+
+### B
+### DB: telnet Befehl der zeigt, dass der Zugriff auf den DB Server funktioniert (Screenshot)
+![](/KN02BTelnet.PNG "")
+### Web: Screenshots der beiden Seiten info.php und db.php
+![](/KN02BInfo.PNG "")
+![](/KN02Bdb.PNG "")
+### DB: docker build und docker run Befehle für Ihren DB-Container
+![](/KN02B.PNG "")
+
+### Commands für DB und Web sind im KN02B-Commands.txt file.
+Angepasste PHP-Dateien im Repo
 
 ## A Lab 4.2 - S3
 ### Liste der Buckets
