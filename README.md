@@ -91,46 +91,36 @@ Der Tag "latest" zeigt, dass die neuste Version verwendet wird.
 ### Commands für DB und Web sind im KN02B-Commands.txt file.
 Angepasste PHP-Dateien im Repo
 
-## A Lab 4.2 - S3
-### Liste der Buckets
-![](/ListeBucketsS3.png "")
-### HTML-Seite, inkl. URL
-![](/webseiteMitUrlS3.PNG "")
-### Liste der Dateien im Bucket
-![](/ListeDateienInucketS3.PNG "")
-### Eigenschaften von "Static website hosting"
-![](/EigenschaftenS3.png "")
+## KN03
+1)
+busybox1:
+- Ip:172.21.0.2
+- Gateway:172.21.0.1
 
-## B 
-### Screenshot mit dem ssh-Befehl und des Resultats unter Verwendung des ersten Schlüssels
-![](/Authenticated.PNG "")
-### Screenshot mit dem ssh-Befehl und des Resultats unter Verwendung des zweiten Schlüssels
-![](/Unauthenticated.PNG "")
-### Screenshot der Instanz-Detail (oder Liste), so dass der verwendete Schlüssel sichtbar ist
-![](/SeeKeyPair.PNG "")
+usybox2:
+- Ip:172.21.0.3
+- Gateway:172.21.0.1
 
-## C
-### Screenshot von Index Seite
-![](/Apache2.PNG "")
-### Screenshot von Info Seite
-![](/PhpPage.PNG "")
-### Screenshot von DB Seite
-![](/DBPage.PNG "")
-## KN3
-## A 
-Siehe commented-cloud-config.yaml file im Repository an.
+busybox3:
+- Ip:172.17.0.2
+- Gateway:172.17.0.1
 
-## B 
-### Ein Screenshot der Details oder Liste der Instanz, welcher den verwendeten Key zeigt
-![](/KN3UsedKey.PNG "")
-### Screenshot mit dem ssh-Befehl und des Resultats unter Verwendung des ersten Schlüssels
-![](/KN3ErsterKey.PNG "")
-![](/KN3List.PNG "")
-### Screenshot mit dem ssh-Befehl und des Resultats unter Verwendung des zweiten Schlüssels
-![](/KN3ZweiterKey.PNG "")
+busybox4:
+- Ip:172.17.0.3
+- Gateway:172.17.0.1
+### Interaktive Session auf busybox1
+### ping busybox2, ping IP-von-busybox2
+![](/KN03A2.2-4.PNG "")
+### ping busybox3, ping IP-von-busybox3
+![](/KN03A2.3-5.PNG "")
 
-## C
-![](/KN3C.PNG "")
+### Interaktive Session auf busybox3
+### ping busybox1, ping busybox4
+![](/KN03A3.2-3.PNG "")
+### ping IP-von-busybox1, ping IP-von-busybox4
+![](/KN03A3.4-5.PNG "")
+
+
 
 ## KN07
 ## A
