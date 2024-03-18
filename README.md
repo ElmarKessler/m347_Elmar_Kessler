@@ -120,7 +120,13 @@ busybox4:
 ### ping IP-von-busybox1, ping IP-von-busybox4
 ![](/KN03A3.4-5.PNG "")
 
+### Zusammenfassung:
+Die Befehle: ping busybox2 und ping busybox3 funktionieren nicht, da diese nicht den gleichen Default-Gateway wie busybox1(172.17.0.3)haben. Kurz gesagt: Sind die container nicht im gleichen Netzwerk.
 
+Die ping IP-von-busybox(1-4) befehle funktionieren alle.
+
+In Kn02 befanden sich die beiden Docker Container im Bridge Netzwerk. Sie konnten zusammen über den Link kommunizieren. 
+Container können ohne Link kommunizieren, wenn sie im gleichen Netzwerk sind.
 
 ## KN07
 ## A
