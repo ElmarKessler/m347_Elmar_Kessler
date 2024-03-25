@@ -131,6 +131,18 @@ Container können ohne Link kommunizieren, wenn sie im gleichen Netzwerk sind.
 
 ## KN04
 ## A
+## a)
+### Screenshot der Seite info.php. Scrollen Sie dabei zuerst runter bis die Felder REMOTE_ADDR
+### und SERVER_ADDR sichtbar sind
+![](/KN04Aa1.PNG "")
+
+### Screenshot der Seite db.php. Sie zeigen, dass beide Images im gleichen Netzwerk sind.
+![](/KN04Aa2.PNG "")
+
+### Docker-Compose File (yaml-Datei)
+### Dockerfile für Webserver
+Siehe im KN04 Ordner
+
 ### Liste der Befehle, die docker compose up ausführt und deren Erklärungen
 
 docker-compose pull: Lädt die neuesten Images für die Dienste herunter, die in der Docker-Compose-Datei definiert sind.
