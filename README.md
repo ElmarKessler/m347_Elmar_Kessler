@@ -94,19 +94,19 @@ Angepasste PHP-Dateien im Repo
 ## KN03
 1)
 busybox1:
-- Ip:172.21.0.2
+- Ip:172.17.0.3
 - Gateway:172.21.0.1
 
 usybox2:
-- Ip:172.21.0.3
+- Ip:172.17.0.2
 - Gateway:172.21.0.1
 
 busybox3:
-- Ip:172.17.0.2
+- Ip:172.18.0.3
 - Gateway:172.17.0.1
 
 busybox4:
-- Ip:172.17.0.3
+- Ip:172.18.0.2
 - Gateway:172.17.0.1
 ### Interaktive Session auf busybox1
 ### ping busybox2, ping IP-von-busybox2
@@ -120,16 +120,32 @@ busybox4:
 ### ping IP-von-busybox1, ping IP-von-busybox4
 ![](/KN03A3.4-5.PNG "")
 
+### Zusammenfassung:
+Die Befehle: ping busybox2 und ping busybox3 funktionieren in der Interaktiven Session auf busybox1 nicht. Ausserdem erhält der ping IP-von-busybox3 keine Antwort zurück.
+Der Grund ist, dass diese nicht den gleichen Default-Gateway wie busybox1(172.17.0.3)haben. Kurz gesagt: Sind die container nicht im gleichen Netzwerk.
 
+Die ping busybox4 Befehl in der Interaktiven Session  von busybox3 funktioniert als einziger.
 
-## KN07
+In Kn02 befanden sich die beiden Docker Container im Bridge Netzwerk. Sie konnten zusammen über den Link kommunizieren. 
+Container können ohne Link kommunizieren, wenn sie im gleichen Netzwerk sind.
+
+## KN04
 ## A
-## 1 Rehosting
-![](/Uebersicht.PNG "")
-![](/UebersichtAz.PNG "")
-## Warum diese Auswahl:
-Ich habe bei der Konfiguration des EC2 Webservers darauf geachtet, dass alle Anforderungen erfüllt oder sogar übertroffen wurden. Ich entschied mich jedoch immer für die günstigste Variante der Konfiguration. Wenn die Anforderung z.B. 20 GB Speicher war und entweder 16 oder 32 GB zur Auswahl stünden, entschiede ich mich für 32 GB um die Anforderung abzudecken. 
-Dies habe ich bei AWS sowie auch Azure getan, wobei die vorgegeben Ressourcenpakete näher an den Anforderungen waren.
+### Liste der Befehle, die docker compose up ausführt und deren Erklärungen
+
+docker-compose pull: Lädt die neuesten Images für die Dienste herunter, die in der Docker-Compose-Datei definiert sind.
+
+docker-compose build: Erstellt die Docker-Images basierend auf den Dockerfiles in der Docker-Compose-Datei.
+
+docker-compose create: Erstellt Container für die Dienste, startet sie aber nicht.
+
+docker-compose start: Startet die zuvor erstellten Container für die Dienste.
+
+docker-compose up: Führt die Schritte von pull, build, create und start in einem einzigen Befehl aus, um die Docker-Compose-Umgebung zum Laufen zu bringen.
+
+docker-compose attach: Hängt eine interaktive Shell an einen bereits laufenden Container an, um Befehle auszuführen und mit seiner Shell zu interagieren.
+
+
 
 ## 2 Replatforming
 ![](/HekoruUebersicht.PNG "")
