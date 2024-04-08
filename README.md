@@ -161,10 +161,11 @@ docker-compose attach: Hängt eine interaktive Shell an einen bereits laufenden 
 ### Screenshots der beiden Seiten
 ![](/KN04Ab1.PNG)
 ![](/KN04Ab2.PNG)
-Der Fehler "php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution" deutet darauf hin, dass das PHP-Skript nicht in der Lage ist, die IP-Adresse des MySQL-Servers aufzulösen. Dies kann auf Probleme mit der DNS-Auflösung, eine falsche Hostangabe in der Konfiguration oder allgemeine Netzwerkstörungen hinweisen. Es ist wichtig, die Konfiguration in der `db.php`-Datei zu überprüfen und sicherzustellen, dass der Hostname oder die IP-Adresse des MySQL-Servers korrekt ist. Falls Probleme mit dem Netzwerk bestehen, sollten Netzwerkkonfiguration und -verbindungen untersucht werden.
 
+Erklärung:
+Das Problem entsteht, weil die PHP-Anwendung versucht, eine Verbindung zur Datenbank herzustellen, aber die Domainauflösung fehlschlägt, möglicherweise aufgrund von DNS-Problemen oder einer falsch konfigurierten Verbindung. Um das Problem zu lösen, überprüfen Sie die DNS-Konfiguration des Servers und stellen Sie sicher, dass die Datenbankadresse korrekt ist. Außerdem sollten Sie sicherstellen, dass der Server eine aktive Internetverbindung hat und dass Firewalls oder Sicherheitsrichtlinien die Verbindung nicht blockieren.
 
-## 2 Replatforming
+## B
 ![](/HekoruUebersicht.PNG "")
 ![](/PerformanceM.PNG "")
 ![](/Premium.PNG "")
