@@ -157,6 +157,10 @@ docker-compose up: Führt die Schritte von pull, build, create und start in eine
 
 docker-compose attach: Hängt eine interaktive Shell an einen bereits laufenden Container an, um Befehle auszuführen und mit seiner Shell zu interagieren.
 
+### b)
+![](/KN04Ab/KN04Ab1.PNG"")
+![](/KN04Ab/KN04Ab2.PNG"")
+Der Fehler "php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution" deutet darauf hin, dass das PHP-Skript nicht in der Lage ist, die IP-Adresse des MySQL-Servers aufzulösen. Dies kann auf Probleme mit der DNS-Auflösung, eine falsche Hostangabe in der Konfiguration oder allgemeine Netzwerkstörungen hinweisen. Es ist wichtig, die Konfiguration in der `db.php`-Datei zu überprüfen und sicherzustellen, dass der Hostname oder die IP-Adresse des MySQL-Servers korrekt ist. Falls Probleme mit dem Netzwerk bestehen, sollten Netzwerkkonfiguration und -verbindungen untersucht werden.
 
 
 ## 2 Replatforming
