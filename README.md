@@ -131,6 +131,18 @@ Container können ohne Link kommunizieren, wenn sie im gleichen Netzwerk sind.
 
 ## KN04
 ## A
+## a)
+### Screenshot der Seite info.php. Scrollen Sie dabei zuerst runter bis die Felder REMOTE_ADDR
+### und SERVER_ADDR sichtbar sind
+![](/KN04Aa1.PNG "")
+
+### Screenshot der Seite db.php. Sie zeigen, dass beide Images im gleichen Netzwerk sind.
+![](/KN04Aa2.PNG "")
+
+### Docker-Compose File (yaml-Datei)
+### Dockerfile für Webserver
+Siehe im KN04 Ordner
+
 ### Liste der Befehle, die docker compose up ausführt und deren Erklärungen
 
 docker-compose pull: Lädt die neuesten Images für die Dienste herunter, die in der Docker-Compose-Datei definiert sind.
@@ -145,6 +157,10 @@ docker-compose up: Führt die Schritte von pull, build, create und start in eine
 
 docker-compose attach: Hängt eine interaktive Shell an einen bereits laufenden Container an, um Befehle auszuführen und mit seiner Shell zu interagieren.
 
+## b)
+![](/KN04b/KN04Ab1.PNG"")
+![](/KN04b/KN04Ab2.PNG"")
+Der Fehler "php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution" deutet darauf hin, dass das PHP-Skript nicht in der Lage ist, die IP-Adresse des MySQL-Servers aufzulösen. Dies kann auf Probleme mit der DNS-Auflösung, eine falsche Hostangabe in der Konfiguration oder allgemeine Netzwerkstörungen hinweisen. Es ist wichtig, die Konfiguration in der `db.php`-Datei zu überprüfen und sicherzustellen, dass der Hostname oder die IP-Adresse des MySQL-Servers korrekt ist. Falls Probleme mit dem Netzwerk bestehen, sollten Netzwerkkonfiguration und -verbindungen untersucht werden.
 
 
 ## 2 Replatforming
