@@ -158,6 +158,36 @@ docker-compose up: Führt die Schritte von pull, build, create und start in eine
 docker-compose attach: Hängt eine interaktive Shell an einen bereits laufenden Container an, um Befehle auszuführen und mit seiner Shell zu interagieren.
 
 ## b)
+version: '3.8'
+
+services:
+  m347-kn04a-db:
+    image: elmarkessler031/m347:kn02b-db
+    container_name: m347-kn04a-db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+    networks:
+      - m347-kn04a-net
+
+  m347-kn04a-web:
+    image: elmarkessler031/m347:kn02b-web
+    container_name: m347-kn04a-web
+    ports:
+      - "80:80"
+    networks:
+      - m347-kn04a-net
+
+networks:
+  m347-kn04a-net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24
+          gateway: 172.20.0.1
+	  
 ### Screenshots der beiden Seiten
 ![](/KN04Ab1.PNG)
 ![](/KN04Ab2.PNG)
