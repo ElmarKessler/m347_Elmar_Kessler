@@ -1,0 +1,26 @@
+version: '3.8'
+name: kn05-compose
+services:
+  container-1:
+    image: nginx:latest
+    container_name: kn05c-container-1
+    volumes:
+      - type: volume
+        source: elmar-volume
+        target: "/var/www/html/"
+      - type: bind
+        source: "C:/GitHub/GitHub/m347_Elmar_Kessler/KN05/compose"
+        target: /usr/share/nginx/html
+      - type: tmpfs
+        target: "/random-dir"
+    ports:
+      - "2100:80"
+  container-2:
+    image: nginx:latest
+    container_name: kn05c-container-2
+    volumes:
+      - elmar-volume:/usr/share/nginx/html:rw
+    ports:
+      - "2200:80"
+volumes:
+  elmar-volume: {}

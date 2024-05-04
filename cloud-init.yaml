@@ -7,8 +7,8 @@ users:
     home: /home/ubuntu
     shell: /bin/bash
     ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUBo+qnNu5xxM9vfz4C04M36FHxHNrEMdm5TkFj1/SfVtqunlUOeMpu7nFCZZKnX8HYwf/MkjcBiTYAgncxku8grwl6XuW/pcvmb6/ghSIaw4xtRRSzit7omqJ5d8kXB3+Nd1aaMHsjfly4nkaqswhySVXQqr8Hw6DbWVw8jLLVKEE+5NZHY33hJkhJwK4blCllsGpmQaKi1qxjsN0hZOWNK01iJAydwD8t2xJ0NOYbq8Qas5IyPnRN7SPxvEhIP6WLQ6Ym6Dmf8FwNW1cHLTKabgjzt5f/HKUkKS89dPd3fn4nnFli1BOMECGUIvVlOw2pQNri7+04OOfn2FGlqr5 teacher
-      - # fügen Sie Ihren Schlüssel hinzu!
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUBo+qnNu5xxM9vfz4C04M36FHxHNrEMdm5TkFj1/SfVtqunlUOeMpu7nFCZZKnX8HYwf/MkjcBiTYAgncxku8grwl6XuW/pcvmb6/ghSIaw4xtRRSzit7omqJ5d8kXB3+Nd1aaMHsjfly4nkaqswhySVXQqr8Hw6DbWVw8jLLVKEE+5NZHY33hJkhJwK4blCllsGpmQaKi1qxjsN0hZOWNK01iJAydwD8t2xJ0NOYbq8Qas5IyPnRN7SPxvEhIP6WLQ6Ym6Dmf8FwNW1cHLTKabgjzt5f/HKUkKS89dPd3fn4nnFli1BOMECGUIvVlOw2pQNri7+04OOfn2FGlqr5 public
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC189VB6syefxTIoxUOEQGLP2PE9g5YjwPtGWtVsWMgXzrhID/2JqcX9RpCdctOiVOo4JjmtwbZ1gChQ/n/eH5Rvaq1GmqDlNFIPJrzDIFvjiA9fVvL0W8nxF0N4AVjpIX+1RFRUQWUxuTHDG9nkF8dPIslbwfBsRMJZwBiRBsrLoyEvCRE8A9DQ21fQjRTXkRwuZdE7cG6rJKrptBO9MqFK9jdj3hW0E1KIdm2n175Bl7aY5NgWc5K0I/lHeV3649qXVFYKnw+y7Qo1oqxmhO3qNxKoL/jue9uA+Kq12LNcEbuRqPdjE0cBS2sSTBiK8ID77uaONDQsuE0ZaTu6Nr aws
 ssh_pwauth: false
 disable_root: false
 package_update: true
@@ -26,12 +26,87 @@ packages:
   - lsb-release
   - unattended-upgrades
 final_message: "The system is finally up, after $UPTIME seconds"
-write_files: # Erweitern Sie diesen Teil
-content
-db
-web
-networks
-dockefile
+write_files:
+  - path: /home/ubuntu/dockerfile
+    content: |
+      # Verwende das offizielle PHP-Image mit Apache als Basis
+      FROM php:8.0-apache
+
+      # Installiere mysqli-Erweiterung für PHP
+      RUN docker-php-ext-install mysqli
+
+      # Setze das Arbeitsverzeichnis im Container
+      WORKDIR /var/www/html
+
+      # Kopiere die PHP-Dateien in das Arbeitsverzeichnis im Container
+      COPY info.php .
+      COPY db.php .
+
+      # Port 80 für Apache freigeben
+      EXPOSE 80
+      RUN ["docker-php-ext-install", "mysqli"]
+  - path: /var/www/html/info.php
+    content: |
+      <?php
+      // Show all information, defaults to INFO_ALL
+      phpinfo();
+      ?>
+
+  - path: /var/www/html/db.php
+    content: |
+      <?php
+              //database
+              $servername = "m347-kn04a-db";
+              $username = "root";
+              $password = "password";
+              $dbname = "mysql";
+
+              // Create connection
+              $conn = new mysqli($servername, $username, $password, $dbname);
+              // Check connection
+              if ($conn->connect_error) {
+                      die("Connection failed: " . $conn->connect_error);
+              }
+
+              $sql = "select Host, User from mysql.user;";
+              $result = $conn->query($sql);
+              while($row = $result->fetch_assoc()){
+                      echo($row["Host"] . " / " . $row["User"] . "<br />");
+              }
+              //var_dump($result);
+      ?>
+
+  - path: /home/ubuntu/docker-compose.yml
+    content: |
+      version: '3.8'
+      name: kn04-compose
+      services:
+        m347-kn04a-db:
+          image: elmarkessler031/m347:kn02b-db
+          container_name: m347-kn04a-db
+          environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: mysql
+            MYSQL_USER: root
+            MYSQL_PASSWORD: password
+          networks:
+            - m347-kn04a-net
+
+        m347-kn04a-web:
+          image: elmarkessler031/m347:kn02b-web
+          container_name: m347-kn04a-web
+          ports:
+            - "80:80"
+          networks:
+            - m347-kn04a-net
+
+      networks:
+        m347-kn04a-net:
+          ipam:
+            driver: default
+            config:
+              - subnet: 172.20.0.0/24
+                gateway: 172.20.0.1
 runcmd:
   - mkdir -p /etc/apt/keyrings
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -40,5 +115,5 @@ runcmd:
   - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
   - systemctl enable docker
   - systemctl start docker
+  - cd /home/ubuntu
   - sudo docker compose up -d
-
