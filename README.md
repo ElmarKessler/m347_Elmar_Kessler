@@ -158,12 +158,44 @@ docker-compose up: Führt die Schritte von pull, build, create und start in eine
 docker-compose attach: Hängt eine interaktive Shell an einen bereits laufenden Container an, um Befehle auszuführen und mit seiner Shell zu interagieren.
 
 ## b)
-![](/KN04b/KN04Ab1.PNG"")
-![](/KN04b/KN04Ab2.PNG"")
-Der Fehler "php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution" deutet darauf hin, dass das PHP-Skript nicht in der Lage ist, die IP-Adresse des MySQL-Servers aufzulösen. Dies kann auf Probleme mit der DNS-Auflösung, eine falsche Hostangabe in der Konfiguration oder allgemeine Netzwerkstörungen hinweisen. Es ist wichtig, die Konfiguration in der `db.php`-Datei zu überprüfen und sicherzustellen, dass der Hostname oder die IP-Adresse des MySQL-Servers korrekt ist. Falls Probleme mit dem Netzwerk bestehen, sollten Netzwerkkonfiguration und -verbindungen untersucht werden.
+version: '3.8'
 
+services:
+  m347-kn04a-db:
+    image: elmarkessler031/m347:kn02b-db
+    container_name: m347-kn04a-db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+    networks:
+      - m347-kn04a-net
 
-## 2 Replatforming
+  m347-kn04a-web:
+    image: elmarkessler031/m347:kn02b-web
+    container_name: m347-kn04a-web
+    ports:
+      - "80:80"
+    networks:
+      - m347-kn04a-net
+
+networks:
+  m347-kn04a-net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24
+          gateway: 172.20.0.1
+	  
+### Screenshots der beiden Seiten
+![](/KN04Ab1.PNG)
+![](/KN04Ab2.PNG)
+
+Erklärung:
+Das Problem entsteht, weil die PHP-Anwendung versucht, eine Verbindung zur Datenbank herzustellen, aber die Domainauflösung fehlschlägt, möglicherweise aufgrund von DNS-Problemen oder einer falsch konfigurierten Verbindung. Um das Problem zu lösen, überprüfen Sie die DNS-Konfiguration des Servers und stellen Sie sicher, dass die Datenbankadresse korrekt ist. Außerdem sollten Sie sicherstellen, dass der Server eine aktive Internetverbindung hat und dass Firewalls oder Sicherheitsrichtlinien die Verbindung nicht blockieren.
+
+## B
 ![](/HekoruUebersicht.PNG "")
 ![](/PerformanceM.PNG "")
 ![](/Premium.PNG "")
