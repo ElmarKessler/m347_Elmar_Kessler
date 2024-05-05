@@ -5,6 +5,7 @@ Der Vorteil ist, dass sich die Container die gemeinsamen Ressourcen (Volume Spei
 Pods sind kleine ausführbare Dienste einer App oder einem Dateisystem. Der Unterschied zur Replica besteht darin, dass Replica kopierte Pods darstellt. Mit Replicas kann man mehrer identische Pods verwalten und Skalieren.
 Der Vorteil von Replicas sind das man die Last von einem Pod auf mehrer identische Pods aufteilen kann.
 ### Unterschied Service und Deployment
+Ein Service ermöglicht die Kommunikation zwischen den verschiedenen Teilen einer Anwendung im Kubernetes-Cluster. Ausserdem gewährleistet ein Service Load-Balancing. Ein Deployment hingegen verwaltet die Anzahl der laufenden Kopien einer Anwendung und deren Skalierung im Cluster.
 
 ### Welches Problem löst Ingress?
 
