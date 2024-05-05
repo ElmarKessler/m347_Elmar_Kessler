@@ -1,5 +1,7 @@
 ## KN05
-## A
+## A 
+### Befehle
+Docker mit dem bind-mount erstellen: docker run -d --name kn05 -v C:\GitHub\GitHub\m347_Elmar_Kessler\KN05:/mnt nginx
 
 ## B
 
