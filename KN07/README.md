@@ -1,0 +1,11 @@
+## A 
+### Unterschied Pods und Replicas
+Ein Pod ist eine Art Struktur welche ein oder mehrere Container enthalten kann, welche über den localhost (öffentliche IP-Adresse) miteinander kommunizieren.
+Der Vorteil ist, dass sich die Container die gemeinsamen Ressourcen (Volume Speicher, Netzwerk Konfiguration sowie IP-Adressen)eines Pods teilen können. 
+Pods sind kleine ausführbare Dienste einer App oder einem Dateisystem. Der Unterschied zur Replica besteht darin, dass Replica kopierte Pods darstellt. Mit Replicas kann man mehrer identische Pods verwalten und Skalieren.
+Der Vorteil von Replicas sind das man die Last von einem Pod auf mehrer identische Pods aufteilen kann.
+### Unterschied Service und Deployment
+
+### Welches Problem löst Ingress?
+
+### Was ist ein Statefulset? + Beispiel
