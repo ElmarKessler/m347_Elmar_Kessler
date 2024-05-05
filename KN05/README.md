@@ -2,7 +2,11 @@
 ## A 
 ### Befehle
 Docker mit dem bind-mount erstellen: docker run -d --name kn05 -v C:\GitHub\GitHub\m347_Elmar_Kessler\KN05:/mnt nginx
-
+![](Bilder/KN05AContainerInspect.PNG "")
+Es ist noch kein File vorhanden
+![](Bilder/KN05KeinFile.PNG "")
+Es ist ein File vorhanden
+![](Bilder/KN5FileVorhanden.PNG "")
 ## B
 
 ## C
