@@ -8,15 +8,26 @@ Docker mit dem bind-mount erstellen: docker run -d --name kn05 -v C:\GitHub\GitH
 Es ist noch kein File vorhanden
 ![](Bilder/KN05KeinFile.PNG "")
 Es ist ein File vorhanden
-![](Bilder/KN5FileVorhanden.PNG "")
+![](Bilder/KN05FileVorhanden.PNG "")
 Inhalt des File:
 Schaue im skript.sh nach -> es ist ein basic Text output
 ## B
 ### Inhalt Volume
 ![](Bilder/KN05BInhaltVolume.PNG "")
+### Befehle
+```
+docker run -d --name container1 -v kn05Volume:/data nginx
+docker run -d --name container2 -v kn05Volume:/data nginx
+
+docker exec -it container1 bash
+echo "Hello from container 1" >> /data/test.txt
+
+docker exec -it container2 bash
+echo "Hello from container 2" >> /data/test.txt
+```
 ## C
 ### Compose Befehle
-![](Bilder/KN05CComposeBefehle.PNG "")
+![](Bilder/KN05CComposeBefehl.PNG "")
 ### Container 1 und 2
 ![](Bilder/KN05CContainer1.PNG "")
 ![](Bilder/KN05CContainer2.PNG "")
