@@ -7,8 +7,8 @@ users:
     home: /home/ubuntu
     shell: /bin/bash
     ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUBo+qnNu5xxM9vfz4C04M36FHxHNrEMdm5TkFj1/SfVtqunlUOeMpu7nFCZZKnX8HYwf/MkjcBiTYAgncxku8grwl6XuW/pcvmb6/ghSIaw4xtRRSzit7omqJ5d8kXB3+Nd1aaMHsjfly4nkaqswhySVXQqr8Hw6DbWVw8jLLVKEE+5NZHY33hJkhJwK4blCllsGpmQaKi1qxjsN0hZOWNK01iJAydwD8t2xJ0NOYbq8Qas5IyPnRN7SPxvEhIP6WLQ6Ym6Dmf8FwNW1cHLTKabgjzt5f/HKUkKS89dPd3fn4nnFli1BOMECGUIvVlOw2pQNri7+04OOfn2FGlqr5  teacher
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClTwSwEolWaVuXiakhYqehF1X9dOi8iwNCS/PPIgisSd7dToLsD74+fOcUrocbLZMIwBJWDKComo8a0VKOVXug0RqXOIkOliIHNsaXurkkBuc3WtVtz2SQZJEkGnCbmHp2NBGutEfJqTTEfrQxaj3MW20hQRxi+PDhvagH1h5KlIwCEiL3ObJR/8DR8Pq4QDyoBosCHm3BoPKvHoEZ8wh1ohL7K+uD0Yo/R7iNEQpmTrdqPzYv8rSPQCVheoMlMu2QykQwtEUpM1IZmYgAkz1oDhaI8Pv0tyFB4XMcjs8WcroNBavD4WxoVuabWd9Sv03zXAX2Q6ZtyylDRnT+4AOz ruben
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUBo+qnNu5xxM9vfz4C04M36FHxHNrEMdm5TkFj1/SfVtqunlUOeMpu7nFCZZKnX8HYwf/MkjcBiTYAgncxku8grwl6XuW/pcvmb6/ghSIaw4xtRRSzit7omqJ5d8kXB3+Nd1aaMHsjfly4nkaqswhySVXQqr8Hw6DbWVw8jLLVKEE+5NZHY33hJkhJwK4blCllsGpmQaKi1qxjsN0hZOWNK01iJAydwD8t2xJ0NOYbq8Qas5IyPnRN7SPxvEhIP6WLQ6Ym6Dmf8FwNW1cHLTKabgjzt5f/HKUkKS89dPd3fn4nnFli1BOMECGUIvVlOw2pQNri7+04OOfn2FGlqr5 public
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC189VB6syefxTIoxUOEQGLP2PE9g5YjwPtGWtVsWMgXzrhID/2JqcX9RpCdctOiVOo4JjmtwbZ1gChQ/n/eH5Rvaq1GmqDlNFIPJrzDIFvjiA9fVvL0W8nxF0N4AVjpIX+1RFRUQWUxuTHDG9nkF8dPIslbwfBsRMJZwBiRBsrLoyEvCRE8A9DQ21fQjRTXkRwuZdE7cG6rJKrptBO9MqFK9jdj3hW0E1KIdm2n175Bl7aY5NgWc5K0I/lHeV3649qXVFYKnw+y7Qo1oqxmhO3qNxKoL/jue9uA+Kq12LNcEbuRqPdjE0cBS2sSTBiK8ID77uaONDQsuE0ZaTu6Nr aws
 ssh_pwauth: false
 disable_root: false
 package_update: true
@@ -34,8 +34,8 @@ write_files:
         //database
         $servername = "m347-kn04a-db"; // Private IP Adresse des DB Server
         $username = "root";
-        $password = "example";
-        //$dbname = "example-database";
+        $password = "password";
+        $dbname = "mysqlki";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password);//, $dbname);

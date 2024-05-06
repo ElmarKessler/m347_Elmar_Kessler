@@ -63,3 +63,7 @@ networks:
 
 Erklärung:
 Das Problem entsteht, weil die PHP-Anwendung versucht, eine Verbindung zur Datenbank herzustellen, aber die Domainauflösung fehlschlägt, möglicherweise aufgrund von DNS-Problemen oder einer falsch konfigurierten Verbindung. Um das Problem zu lösen, überprüfen Sie die DNS-Konfiguration des Servers und stellen Sie sicher, dass die Datenbankadresse korrekt ist. Außerdem sollten Sie sicherstellen, dass der Server eine aktive Internetverbindung hat und dass Firewalls oder Sicherheitsrichtlinien die Verbindung nicht blockieren.
+
+## B
+### Korrekte ausführung des Cloud-Inits
+![](/KN04BCloudInitSuccessful.PNG)
