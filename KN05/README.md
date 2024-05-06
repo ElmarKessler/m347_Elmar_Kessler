@@ -27,7 +27,7 @@ echo "Hello from container 2" >> /data/test.txt
 ```
 ## C
 ### Compose Befehle
-![](Bilder/KN05CComposeBefehle.PNG "")
+![](Bilder/KN05CComposeBefehl.PNG "")
 ### Container 1 und 2
 ![](Bilder/KN05CContainer1.PNG "")
 ![](Bilder/KN05CContainer2.PNG "")
