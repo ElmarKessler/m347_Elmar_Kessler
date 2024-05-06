@@ -6,14 +6,14 @@
 ### Node 2
 ![](Node2.PNG "")
 ## B
-### get nodes
-
-Dokumentieren
-### Befehl microk8s status (vor addons)
-
-Dokumentation
+### Status
+![](Status.PNG "")
 ### Node entfernen
-
+![](Leave.PNG "")
+### Node als Worker
+![](NodeAlsWorker.PNG "")
 ### Node hinzufügen als Worker und microk8s status
+![](WorkerNodeNot.PNG "")
+### Befehl microk8s status (vor addons)
+![](ZweiterStatus.PNG "")
 
-Dokumentation
