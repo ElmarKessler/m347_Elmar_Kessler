@@ -70,3 +70,7 @@ Das Problem entsteht, weil die PHP-Anwendung versucht, eine Verbindung zur Daten
 ### Neu erstellte AWS Instanz mit Cloud_Init.yaml
 ![](KN04BInstanz.PNG "")
 Das cloud-init.yaml ist im KN04b Ordner.
+### Info.php
+![](KN04BInfoPhp.PNG "")
+### db.php
+![](KN04BDBPhp.PNG "")
