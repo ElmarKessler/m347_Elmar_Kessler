@@ -1,10 +1,10 @@
 ## A
 ### Master
-
+![](Master.PNG "")
 ### Node 1
-
+![](Node1.PNG "")
 ### Node 2
-
+![](Node2.PNG "")
 ## B
 ### get nodes
 
