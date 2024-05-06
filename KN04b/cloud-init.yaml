@@ -45,14 +45,14 @@ write_files:
       # Port 80 für Apache freigeben
       EXPOSE 80
       RUN ["docker-php-ext-install", "mysqli"]
-  - path: /var/www/html/info.php
+  - path: /home/ubuntu/info.php
     content: |
       <?php
       // Show all information, defaults to INFO_ALL
       phpinfo();
       ?>
 
-  - path: /var/www/html/db.php
+  - path: /home/ubuntu/db.php
     content: |
       <?php
               //database
@@ -78,35 +78,35 @@ write_files:
 
   - path: /home/ubuntu/docker-compose.yml
     content: |
-      version: '3.8'
-      name: kn04-compose
-      services:
-        m347-kn04a-db:
-          image: elmarkessler031/m347:kn02b-db
-          container_name: m347-kn04a-db
-          environment:
-            MYSQL_ROOT_PASSWORD: password
-            MYSQL_DATABASE: mysql
-            MYSQL_USER: root
-            MYSQL_PASSWORD: password
-          networks:
+        version: '3.8'
+        services:
+          m347-kn04a-db:
+            image: mariadb:latest
+            container_name: m347-kn04a-db
+            environment:
+              MYSQL_ROOT_PASSWORD: password
+              MYSQL_DATABASE: mysql
+              MYSQL_USER: root
+              MYSQL_PASSWORD: password
+            networks:
+              - m347-kn04a-net
+        
+          m347-kn04a-web:
+            build: .
+            container_name: m347-kn04a-web
+            ports:
+              - "80:80"
+            networks:
             - m347-kn04a-net
-
-        m347-kn04a-web:
-          image: elmarkessler031/m347:kn02b-web
-          container_name: m347-kn04a-web
-          ports:
-            - "80:80"
-          networks:
-            - m347-kn04a-net
-
-      networks:
-        m347-kn04a-net:
-          ipam:
-            driver: default
-            config:
-              - subnet: 172.20.0.0/24
-                gateway: 172.20.0.1
+       
+        networks:
+            m347-kn04a-net:
+              ipam:
+                driver: default
+                config:
+                  - subnet: 172.10.0.0/16
+                    ip_range: 172.10.5.0/24
+                    gateway: 172.10.5.254
 runcmd:
   - mkdir -p /etc/apt/keyrings
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
